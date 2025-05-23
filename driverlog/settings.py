@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django.contrib.gis',
     'dl_server',
 ]
 
@@ -79,7 +80,7 @@ WSGI_APPLICATION = 'driverlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ.get('DATABASE'),
         'USER': os.environ.get('USERNAME'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
