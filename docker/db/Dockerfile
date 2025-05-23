@@ -74,6 +74,8 @@ COPY ./update-postgis.sh /usr/local/bin
 FROM arm64v8/postgres:17.5-bookworm
 
 COPY --from=builder /usr/local /usr/local
+COPY --from=builder /usr/share /usr/share
+COPY --from=builder /usr/lib /usr/lib
 
 ENV LD_LIBRARY_PATH=/usr/local/lib
 
